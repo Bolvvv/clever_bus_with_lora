@@ -3,7 +3,7 @@
 
 #include <TinyGPS++.h>   
 
-
+//使用递归的方式访问文件
 void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
     Serial.printf("Listing directory: %s\r\n", dirname);
 
@@ -35,6 +35,7 @@ void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
     }
 }
 
+//读flash单个文件信息于串口监视器上
 void readFile(fs::FS &fs, const char * path){
     Serial.printf("Reading file: %s\r\n", path);
 
@@ -50,6 +51,7 @@ void readFile(fs::FS &fs, const char * path){
     }
 }
 
+//向flash已有文件中写入信息
 void writeFile(fs::FS &fs, const char * path, const char * message){
     Serial.printf("Writing file: %s\r\n", path);
 
@@ -65,6 +67,7 @@ void writeFile(fs::FS &fs, const char * path, const char * message){
     }
 }
 
+//添加一个文件
 void appendFile(fs::FS &fs, const char * path, const char * message){
     Serial.printf("Appending to file: %s\r\n", path);
 
